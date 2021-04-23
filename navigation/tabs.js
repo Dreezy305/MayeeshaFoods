@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Home } from "../screens/Home";
-import {}
+import { COLORS, icon } from "../constants";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,17 @@ const Tabs = () => {
           component={Home}
           options={{
             tabBarLabel: "Home",
-            tabBarIcon: ({ focused }) => <Image />,
+            tabBarIcon: ({ focused }) => (
+              <Image
+                source={icon.cutlery}
+                resizeMode="contain"
+                style={{
+                  width: 25,
+                  height: 25,
+                  tintColor: focused ? COLORS.primary : COLORS.secondary,
+                }}
+              />
+            ),
           }}
         />
         {/* <Tab.Screen name="Home" component={Home} /> */}

@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Home, Restaurant, OrderDelivery } from "./screens";
+import Tabs from "./navigation/tabs";
 
 const Stack = createStackNavigator();
 
@@ -13,7 +14,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={Tabs}
           screenOptions={{ headerShown: false }}
           initialRouteName={Home}
         />
